@@ -21,5 +21,6 @@ namespace Rangamo.Models
         public int QuantityOnHand { get; set; }
         public int ReOrderQuantity { get; set; }
 
+
     }
 }
