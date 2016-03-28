@@ -1,0 +1,86 @@
+﻿using Rangamo.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+
+namespace Rangamo.DAL
+{
+    public class RangamoRepository:IRangamoRepository
+    {
+        private RangamoContext _context;
+        public RangamoRepository(RangamoContext rangamoContext)
+        {
+            this._context = rangamoContext;
+        }
+        public IEnumerable<InventoryItems> GetInventories()
+        {
+            return _context.Inventories.ToList();
+        }
+        public InventoryItems GetInventoryById(int inventoryId)
+        {
+            return _context.Inventories.Find(inventoryId);
+        }
+        public void InsertInventory(InventoryItems inventory)
+        {
+            _context.Inventories.Add(inventory);
+        }
+        public void DeleteInventory(int inventoryId)
+        {
+            InventoryItems inventory = _context.Inventories.Find(inventoryId);
+            _context.Inventories.Remove(inventory);
+        }
+        public void UpdateInventory(InventoryItems inventory)
+        {
+            _context.Entry(inventory).State = EntityState.Modified;
+        }
+        public void ItemSave()
+        {
+            _context.SaveChanges();
+        }
+        public IEnumerable<Product> GetProducts()
+        {
+            return _context.Products.ToList();
+        }
+        public Product GetProductById(int productId)
+        {
+            return _context.Products.Find(productId);
+        }
+        public void InsertProduct(Product product)
+        {
+            _context.Products.Add(product);
+        }
+        public void DeleteProduct(int productId)
+        {
+            Product product = _context.Products.Find(productId);
+            _context.Products.Remove(product);
+        }
+        public void UpdateProduct(Product product)
+        {
+            _context.Entry(product).State = EntityState.Modified;
+        }
+        public void ProductSave()
+        {
+            _context.SaveChanges();
+        }
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+    }
+}

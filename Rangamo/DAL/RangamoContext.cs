@@ -10,7 +10,10 @@ namespace Rangamo.DAL
     public class RangamoContext:DbContext
     {
         public RangamoContext() : base("RangData") { }
-        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<InventoryItems> Inventories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

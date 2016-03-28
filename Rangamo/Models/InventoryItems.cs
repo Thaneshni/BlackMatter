@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Rangamo.Models
 {
-    public class Inventory
+    public class InventoryItems
     {
         [Key]
         public int InventoryId { get; set; }
@@ -18,8 +18,8 @@ namespace Rangamo.Models
         [MaxLength(30)]
         [Column("Quantity On Hand")]
         [Display(Name = "Quantity On Hand")]
-        public int QuantityOnHand { get; set; }
-        public int ReOrderQuantity { get; set; }
+        public string QuantityOnHand { get; set; }
+        public string ReOrderQuantity { get; set; }
 
 
     }
