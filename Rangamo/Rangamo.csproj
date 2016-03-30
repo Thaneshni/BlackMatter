@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DAL\IRangamoRepository.cs" />
+    <Compile Include="DAL\RangamoInitialize.cs" />
     <Compile Include="DAL\RangamoRepository.cs" />
     <Compile Include="DAL\RangamoContext.cs" />
     <Compile Include="Global.asax.cs">
