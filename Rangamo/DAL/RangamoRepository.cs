@@ -16,20 +16,20 @@ namespace Rangamo.DAL
         }
         public IEnumerable<InventoryItems> GetInventories()
         {
-            return _context.Inventories.ToList();
+            return _context.Inventory.ToList();
         }
         public InventoryItems GetInventoryById(int inventoryId)
         {
-            return _context.Inventories.Find(inventoryId);
+            return _context.Inventory.Find(inventoryId);
         }
         public void InsertInventory(InventoryItems inventory)
         {
-            _context.Inventories.Add(inventory);
+            _context.Inventory.Add(inventory);
         }
         public void DeleteInventory(int inventoryId)
         {
-            InventoryItems inventory = _context.Inventories.Find(inventoryId);
-            _context.Inventories.Remove(inventory);
+            InventoryItems inventory = _context.Inventory.Find(inventoryId);
+            _context.Inventory.Remove(inventory);
         }
         public void UpdateInventory(InventoryItems inventory)
         {

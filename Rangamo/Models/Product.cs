@@ -26,6 +26,6 @@ namespace Rangamo.Models
         [Display(Name = "Selling Price")]
         public decimal SellingPrice { get; set; }
         public ICollection<Review> Reviews { get; set; }
-        public ICollection<InventoryItems> Inventorys { get; set; }
+        public int InventoryId { get; set; }
     }
 }

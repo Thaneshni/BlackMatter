@@ -11,15 +11,14 @@ namespace Rangamo.Models
     {
         [Key]
         public int InventoryId { get; set; }
+        public int ReOrderQuantity { get; set; }
         [ForeignKey("Product")]
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
         [Required]
-        [MaxLength(30)]
         [Column("Quantity On Hand")]
         [Display(Name = "Quantity On Hand")]
-        public string QuantityOnHand { get; set; }
-        public string ReOrderQuantity { get; set; }
+        public int QuantityOnHand { get; set; }
 
 
     }
