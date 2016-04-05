@@ -9,31 +9,65 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inverse">
         <div class="container">
-            <div class="navbar-header">
+            <div class="nav nav_menu_wrap">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="logo">
+                    <h1>
+                        <a href="/" title="Rangamo">
+                            <img src="/Content/Images/RangamoIcon..png" width="150" height="40" alt="Rangamo" />
+                        </a>
+                    </h1>
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="nav nav_menu_wrap">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("HOME", "Index", "Home")</li>
+                    <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+                    <li>@Html.ActionLink("LADIES WEAR", "Women", "Home")</li>
+                    <li>@Html.ActionLink("MEN WEAR", "Men", "Home")</li>
+                    <li>@Html.ActionLink("MY ACCOUNT", "Index", "Home")</li>
+                    @if (User.Identity.Name != "")
+                    {
+                        <li>@Html.ActionLink("SHOP", "Index", "Catalogue")</li>
+                    }
+                    <li>@Html.ActionLink("CONTACT US", "Contact", "Home")</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("PRODUCTS", "Index", "Products")</li>
+                        <li>@Html.ActionLink("ROLES", "Index", "Roles")</li>
+                    }
+                    @if (User.IsInRole("StockManager"))
+                    {
+                        <li>@Html.ActionLink("INVENTORY", "Index", "Catalogue")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+    <div>
+        <br />
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p style="background-color:#000000"> <br /></p>
+            <p style="background-color:#808080">
+                <a target="_blank" href="https://www.facebook.com/" class="left" style="padding-left:13px;"><img src="~/Content/Images/facebook.png" /></a>
+                <a target="_blank" href="https://www.twitter.com/" class="left" style="padding-left:13px;"><img src="~/Content/Images/twitter.png" /></a>
+                <a target="_blank" href="https://www.instagram.com/" class="left" style="padding-left:13px;"><img src="~/Content/Images/instagram.png" /></a>
+                <a target="_blank" href="https://plus.google.com/" class="left" style="padding-left:13px;"><img src="~/Content/Images/google.png" /></a><br /><br /> &nbsp;&nbsp;&nbsp;
+                &copy; Rangamo Couture @DateTime.Now.Year
+
+            </p>
         </footer>
     </div>
 

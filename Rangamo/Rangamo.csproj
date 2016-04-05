@@ -329,6 +329,8 @@
     <Content Include="Views\InventoryItems\Index.cshtml" />
     <Content Include="Views\Catalogue\Index.cshtml" />
     <Content Include="Views\Cart\Cart.cshtml" />
+    <Content Include="Views\Home\Men.cshtml" />
+    <Content Include="Views\Home\Women.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

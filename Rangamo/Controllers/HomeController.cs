@@ -15,15 +15,23 @@ namespace Rangamo.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "";
 
+            return View();
+        }
+        public ActionResult Men()
+        {
+            return View();
+        }
+        public ActionResult Women()
+        {
             return View();
         }
     }

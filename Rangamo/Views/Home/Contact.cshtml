@@ -1,17 +1,34 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "CONTACT US";
 }
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<img src="~/Content/Images/logo.JPG" height="200" width="400" />
+<br />
+<h3>CONTACT DETAILS</h3>
+<p>Need to speak to us? Do you have any query or suggesstion</p>
+<p>We love to hear from you, so please give us a call on 031 826 4686 or 072 604 9313</p><br />
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+
+
+<h4>FEEL FREE TO GIVE US A FEEDBACK</h4><br />
+    First Name: @Html.TextBox("First_Name") <br /><br />
+    Email     :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Html.TextBox("Email") <br /><br />
+    Contact no: @Html.TextBox("Cell")<br /><br />
+    Message   :&nbsp;&nbsp; @Html.TextArea("Message")<br /><br />
+
+    <input type="submit" class="btn btn-default" /> <br />
+
+    <h3>GENERAL QUERIES</h3>
+    tel: 031 826 4686<br />
+    email: bin.rangamo@yahoo.com
+
+    <address>
+        Address:<br />
+        SHO 05, BROAD WINDSOR COURT<br />
+        Dr Yusuf DAdoo Street<br />
+        Durban 4001 <br />
+    </address>
+
